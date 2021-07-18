@@ -80,7 +80,7 @@ const sortAToZ = () => {
 // sort z to a
 const sortZToA = () => {
     console.log(TodoList.todos);
-    const sortTaskZtoA = TodoList.todos.map(todo => ([todo.title.toLowerCase() ,todo.completed].join('_'))).reverse()
+    const sortTaskZtoA = TodoList.todos.map(todo => ([todo.title.toLowerCase() ,todo.completed].join('_'))).sort().reverse()
     .map(reverse => {    
         return {title:(reverse.split('_')[0][0].toUpperCase() +reverse.split('_')[0].slice(1)), completed:(reverse.split('_')[1]) === "false" && false ||  reverse.split('_')[1] === "true" && true}
     })  
